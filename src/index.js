@@ -32,10 +32,7 @@ router.get('/',(ctx,next)=>{
   ctx.body = 'home';
 })
 
-// hello
-router.get('/hello',(ctx,next)=>{
-  ctx.body = 'hello world';
-})
+
 
 
 
