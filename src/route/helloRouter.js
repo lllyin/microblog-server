@@ -13,9 +13,6 @@ helloRouter.get('/hello/:msg',(ctx,next)=>{
   ctx.body = 'hello '+ctx.params.msg;
 })
 
-// test
-helloRouter.get('/test',(ctx,next)=>{
-  ctx.body = {'name':'lll','age':25};
-})
+
 
 module.exports = helloRouter;

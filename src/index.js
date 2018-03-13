@@ -33,7 +33,10 @@ router.get('/',(ctx,next)=>{
 })
 
 
-
+// test
+helloRouter.get('/test',(ctx,next)=>{
+  ctx.body = {'name':'lll','age':25};
+})
 
 
 app
