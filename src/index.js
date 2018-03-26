@@ -13,15 +13,15 @@ app.use(async (ctx, next) => {
   const start = Date.now();
   await next();
   const ms = Date.now() - start;
-  ctx.set('X-Response-Time', `${ms}ms`)
-})
+  ctx.set('X-Response-Time', `${ms}ms`);
+});
 
 app.use(async (ctx, next) => {
   const start = Date.now();
   await next();
   const ms = Date.now() - start;
-  console.log(`${ctx.method} ${ctx.url} - ${ms}`)
-})
+  console.log(`${ctx.method} ${ctx.url} - ${ms}`);
+});
 
 
 // app.use(async ctx =>{
@@ -35,17 +35,17 @@ app.use(async (ctx, next) => {
 // root
 router.get('/', (ctx, next) => {
   ctx.body = 'home';
-})
+});
 
 
 // test
 router.get('/test', (ctx, next) => {
-  ctx.body = { 'name': 'lll', 'age': 25 };
-})
+  ctx.body = { name: 'lll', age: 25 };
+});
 
 
 app
-  .use(koaBody({strict:false}))
+  .use(koaBody({ strict: false }))
   .use(router.routes())
   .use(hellRouter.routes())
   .use(articlesRouter.routes())
