@@ -27,6 +27,7 @@ const models = {
     content: { type: String, require: true },
     author: { type: String, require: true },
     tags: { type: String, require: false },
+    comments:{type:Array,require:false},
     create_time: { type: Number, require: true },
   },
 };
