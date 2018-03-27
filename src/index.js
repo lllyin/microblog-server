@@ -4,6 +4,7 @@ const koaBody = require('koa-body');
 
 const hellRouter = require('./route/helloRouter');
 const articlesRouter = require('./route/articlesRouter');
+const commentsRouter = require('./route/commentsRouter');
 
 const app = new Koa();
 const router = new Router();
@@ -24,14 +25,6 @@ app.use(async (ctx, next) => {
 });
 
 
-// app.use(async ctx =>{
-//   ctx.body = '<h1>hello world</h1>'
-// })
-
-// app.use(ctx=>{
-//   console.log(this,ctx)
-// })
-
 // root
 router.get('/', (ctx, next) => {
   ctx.body = 'home';
@@ -48,6 +41,7 @@ app
   .use(koaBody({ strict: false }))
   .use(router.routes())
   .use(hellRouter.routes())
+  .use(commentsRouter.routes())
   .use(articlesRouter.routes())
   .use(router.allowedMethods());
 
